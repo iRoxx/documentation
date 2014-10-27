@@ -1,10 +1,33 @@
+{% if page.title %}
+  {% assign title = page.title %}
+{% elsif page.category %}
+  {% if site.data.categories[page.category].title %}
+    {% assign title = site.data.categories[page.category].title %}
+  {% else %}
+    {% assign title = page.category | capitalize %}
+  {% endif %}
+{% elsif page.tag %}
+  {% if site.data.tags[page.tag].title %}
+    {% assign title = site.data.tags[page.tag].title %}
+  {% else %}
+    {% capture title %}#{{ page.tag }} {% endcapture %}
+  {% endif %}
+{% endif %}
 <head>
   <meta charset="UTF-8">
   <meta charset="utf8" />
+  <meta HTTP-equiv="Content-Language" content="en-us" />
+
+  {% if title == 'Documentation' %}
   <title>Codeship Documentation</title>
+  {% else %}
+  <title>{{ title | append:' | Codeship Documentation' }}</title>
+  {% endif %}
+
   <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet" />
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
   <link href="{{ site.baseurl }}/assets/css/docs.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/ico" href="https://www.codeship.io/favicon.ico" />
 
   <!-- start Swiftype -->
   <meta class="swiftype" name="url" data-type="enum" content="{{ site.url }}{{ page.url }}" />

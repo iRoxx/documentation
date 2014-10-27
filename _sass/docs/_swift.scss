@@ -17,6 +17,7 @@
   max-width: 800px;
   left: 50%;
   margin-left: -400px;
+  width: 100%;
 
   @media(max-width: 800px){
     left: 0;
@@ -98,6 +99,7 @@
         font-style: normal;
         font-size: 1rem;
         line-height: 1.3em;
+        letter-spacing: -.004em;
 
         em {
           font-style: normal;
@@ -112,6 +114,8 @@
       @extend .btn--clean;
       padding: .3rem;
       width: 150px;
+      font-size: 0.8rem;
+      line-height: 2rem;
     }
   }
 }

@@ -14,14 +14,13 @@
   position: fixed;
   top: 0;
   padding: 5px 0;
-  min-height: 80px;
 
   .contentWrapper {
     text-align: right;
     padding: $base-padding/2 10rem $base-padding/2 0;
     padding-right: 10rem;
     position: relative;
-    max-width: 100%;
+    max-width: 1600px;
   }
 
   a {
@@ -96,21 +95,29 @@
   @media only screen and (min-width: $bpMedium) {
     display: none !important;
   }
-  padding: 1rem !important;
+  padding: 0 !important;
+
+  h1 {
+    position: absolute;
+  }
+
+  .pageHeader__logo {
+    padding-top: 0;
+  }
 
   .btn--mobileMenu {
     @extend .btn--clean;
     width: 2rem;
-    line-height: 2rem;
     padding: 0;
     margin: 0;
     position: absolute;
-    right: 1rem;
-    top: 1rem;
+    right: 0;
+    top: 0;
+    border: none;
     color: $_cWhite;
-    border: 1px solid $_cWhite;
     background: none;
-    margin-top: .5rem;
+    top: 0;
+    transform: translateY(50%);
 
     &:hover {
       background: transparent;
@@ -127,12 +134,26 @@
     clear: both;
     display: none;
 
+    .btn {
+      margin: 0;
+      padding: .5rem 1rem;
+    }
+
+    ul {
+      padding: 0 1rem;
+    }
+
     li {
       display: block;
 
-      a {
-        padding: .2rem 0;
+      &:first-child {
+        padding-top: 1rem;
       }
+      &:last-child {
+        padding-bottom: 1rem;
+      }
+      a { padding: .2rem 0;}
     }
   }
 }
+

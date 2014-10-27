@@ -5,9 +5,13 @@
   background-position-x: center;
   background-position-y: center;
   display: block;
-  margin-top: 80px;
+  margin-top: 78px;
   padding: 4rem 1rem;
   text-align: center;
+
+  @media only screen and (max-width: $bpMedium) {
+    margin-top: 52px;
+  }
 
   h2 {
     color: $_cWhite;
@@ -32,5 +36,6 @@
   input[type="search"] {
     padding-left: 2rem;
     -webkit-appearance: none; // Because otherwise Safari ignores css values regarding height
+    border: none;
   }
 }

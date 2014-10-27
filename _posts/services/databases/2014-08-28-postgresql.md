@@ -15,9 +15,19 @@ The default databases created for you are **development** and **test**.
 
 PostgreSQL ```9.2.4``` runs on the default port and the credentials are stored in the ```PG_USER``` and ```PG_PASSWORD``` environment variables.
 
-We install the Ubuntu postgresql-contrib package. It includes the extension modules listed in the [PostgreSQL Documentation](http://www.postgresql.org/docs/9.2/static/contrib.html).
+We install the Ubuntu postgresql-contrib package. It includes the [extension modules](http://www.postgresql.org/docs/9.2/static/contrib.html) listed in the PostgreSQL Documentation.
 
 You need to activate them with ```CREATE EXTENSION``` as explained in the [Extension Guide](http://www.postgresql.org/docs/9.1/static/sql-createextension.html).
+
+## Versions
+
+### 9.2
+
+Version **9.2** of PostgreSQL runs on the default port of ```5432```.
+
+### 9.3
+
+In addition we also have version **9.3** installed and configured identically. You can use this version by specifying port ```5433``` in your database configuration.
 
 ## Create Databases and run psql commands
 You can run any SQL query against the PostgreSQL database. For example to create a new database:
